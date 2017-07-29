@@ -1,0 +1,248 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Gazella Import Excel'
+  ClientHeight = 620
+  ClientWidth = 1132
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 1132
+    Height = 73
+    Align = alTop
+    TabOrder = 0
+    ExplicitTop = -6
+    DesignSize = (
+      1132
+      73)
+    object Label2: TLabel
+      Left = 8
+      Top = 8
+      Width = 29
+      Height = 13
+      Caption = 'Fecha'
+    end
+    object btnImport: TButton
+      Left = 861
+      Top = 13
+      Width = 104
+      Height = 35
+      Anchors = [akTop, akRight]
+      Caption = 'Importar'
+      TabOrder = 0
+      OnClick = ImportarClick
+    end
+    object Button1: TButton
+      Left = 997
+      Top = 13
+      Width = 104
+      Height = 35
+      Anchors = [akTop, akRight]
+      Caption = 'Cerrar'
+      TabOrder = 1
+      OnClick = Button1Click
+    end
+    object btnBuscarArchivo: TButton
+      Left = 717
+      Top = 13
+      Width = 104
+      Height = 35
+      Anchors = [akTop, akRight]
+      Caption = 'Buscar Archivo'
+      TabOrder = 2
+      OnClick = btnBuscarArchivoClick
+    end
+  end
+  object Fecha: TDateTimePicker
+    Left = 8
+    Top = 27
+    Width = 169
+    Height = 21
+    Date = 42381.646370300930000000
+    Time = 42381.646370300930000000
+    TabOrder = 1
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Top = 73
+    Width = 1132
+    Height = 547
+    Align = alClient
+    DataSource = DataSource2
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+    TabOrder = 2
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+  object lbbtnRutaArchivo: TLabeledEdit
+    Left = 192
+    Top = 27
+    Width = 473
+    Height = 21
+    EditLabel.Width = 62
+    EditLabel.Height = 13
+    EditLabel.Caption = 'Ruta Archivo'
+    ReadOnly = True
+    TabOrder = 3
+  end
+  object QHeader: TFDQuery
+    Connection = DataModule1.GoConnetion
+    SQL.Strings = (
+      'select * from cnpagostarjetahd')
+    Left = 320
+    Top = 264
+    object QHeaderidarchivo: TIntegerField
+      FieldName = 'idarchivo'
+      Origin = 'idarchivo'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QHeaderfecha: TSQLTimeStampField
+      FieldName = 'fecha'
+      Origin = 'fecha'
+    end
+    object QHeaderobservaciones: TStringField
+      FieldName = 'observaciones'
+      Origin = 'observaciones'
+      Size = 100
+    end
+    object QHeaderestatus: TIntegerField
+      FieldName = 'estatus'
+      Origin = 'estatus'
+    end
+    object QHeadercreated: TSQLTimeStampField
+      FieldName = 'created'
+      Origin = 'created'
+    end
+  end
+  object DataSource1: TDataSource
+    AutoEdit = False
+    DataSet = QHeader
+    Left = 504
+    Top = 248
+  end
+  object QDetail: TFDQuery
+    Connection = DataModule1.GoConnetion
+    SQL.Strings = (
+      'select * from cnpagostarjetadt')
+    Left = 424
+    Top = 248
+    object QDetailidarchivo: TIntegerField
+      FieldName = 'idarchivo'
+      Origin = 'idarchivo'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+      Visible = False
+    end
+    object QDetailseq: TIntegerField
+      DisplayLabel = 'Secuencia'
+      DisplayWidth = 5
+      FieldName = 'seq'
+      Origin = 'seq'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QDetailfecha: TSQLTimeStampField
+      DisplayLabel = 'Fecha'
+      DisplayWidth = 18
+      FieldName = 'fecha'
+      Origin = 'fecha'
+      Required = True
+    end
+    object QDetailcliente: TStringField
+      DisplayLabel = 'Cliente'
+      DisplayWidth = 30
+      FieldName = 'cliente'
+      Origin = 'cliente'
+      Required = True
+      Size = 50
+    end
+    object QDetailtarjeta: TStringField
+      DisplayLabel = 'Tarjeta'
+      DisplayWidth = 20
+      FieldName = 'tarjeta'
+      Origin = 'tarjeta'
+      Required = True
+      Size = 50
+    end
+    object QDetailmonto: TBCDField
+      DisplayLabel = 'Monto'
+      DisplayWidth = 20
+      FieldName = 'monto'
+      Origin = 'monto'
+      Required = True
+      Precision = 15
+      Size = 2
+    end
+    object QDetailnumero_autorizacion: TIntegerField
+      DisplayLabel = 'No. Autorizaci'#243'n'
+      DisplayWidth = 20
+      FieldName = 'numero_autorizacion'
+      Origin = 'numero_autorizacion'
+      Required = True
+    end
+    object QDetailnumero_referencia: TStringField
+      DisplayLabel = 'No. Referencia'
+      DisplayWidth = 20
+      FieldName = 'numero_referencia'
+      Origin = 'numero_referencia'
+      Required = True
+      Size = 50
+    end
+    object QDetailfolio: TStringField
+      DisplayWidth = 60
+      FieldName = 'folio'
+      Origin = 'folio'
+      Required = True
+      Visible = False
+      Size = 50
+    end
+    object QDetailestatus: TStringField
+      DisplayLabel = 'Estatus'
+      DisplayWidth = 20
+      FieldName = 'estatus'
+      Origin = 'estatus'
+      Required = True
+      Size = 50
+    end
+    object QDetailtrans_recibo: TIntegerField
+      DisplayLabel = 'Trans. Recibo'
+      DisplayWidth = 20
+      FieldName = 'trans_recibo'
+      Origin = 'trans_recibo'
+    end
+  end
+  object FDGUIxWaitCursor1: TFDGUIxWaitCursor
+    Provider = 'Forms'
+    Left = 672
+    Top = 240
+  end
+  object DataSource2: TDataSource
+    AutoEdit = False
+    DataSet = QDetail
+    Left = 592
+    Top = 240
+  end
+  object OpenDialog1: TOpenDialog
+    Filter = 'Excel|*.xlsx'
+    InitialDir = 
+      'C:\Users\ecruz\Google Drive\b-Delphi\b-WinForms\GazellaExcelImpo' +
+      'rt'
+    Options = [ofReadOnly, ofHideReadOnly, ofNoChangeDir, ofFileMustExist, ofNoLongNames, ofEnableSizing]
+    Left = 744
+    Top = 240
+  end
+end

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2015/08/13 12:04:04.000.967,=C:\Users\ecruz\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2015/12/16 14:47:17.000.236,=C:\Users\ecruz\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/01/20 10:04:12.000.123,=C:\Users\ecruz\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/01/20 10:04:42.000.193,C:\DelphiProjects\GazellaExcelImport\uGazellaImport.pas=C:\Users\ecruz\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/01/20 10:04:42.000.193,C:\DelphiProjects\GazellaExcelImport\uGazellaImport.dfm=C:\Users\ecruz\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2016/01/20 10:04:58.000.596,C:\DelphiProjects\GazellaExcelImport\GazellaExecelImport.dproj=C:\Users\ecruz\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2016/01/20 15:12:13.000.064,=C:\DelphiProjects\GazellaExcelImport\Unit1.pas</Transaction>
+    <Transaction>2016/01/20 15:12:46.000.544,C:\DelphiProjects\GazellaExcelImport\Unit1.dfm=C:\DelphiProjects\GazellaExcelImport\MainModule.dfm</Transaction>
+    <Transaction>2016/01/20 15:12:46.000.544,C:\DelphiProjects\GazellaExcelImport\Unit1.pas=C:\DelphiProjects\GazellaExcelImport\MainModule.pas</Transaction>
+  </Transactions>
+</BorlandProject>
